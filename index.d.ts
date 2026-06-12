@@ -17,3 +17,5 @@ export function strip(text: string): string;
 
 export const ANSI: Record<AnsiColor, string>;
 export const STYLES: Record<StyleName, string>;
+
+export as namespace shellcraftsColorize;
