@@ -28,3 +28,9 @@ assert("strip handles clean text", strip("hello") === "hello");
 
 console.log(`\nResults: ${passed} passed, ${failed} failed`);
 process.exit(failed > 0 ? 1 : 0);
+
+// edge cases
+assert("gradient single char no crash", gradient("x", "#FF0000", "#0000FF").length > 0);
+assert("gradient preserves char count", strip(gradient("hello", "#FF0000", "#0000FF")).length === 5);
+assert("strip handles nested styles", strip("\x1b[1m\x1b[31mbold red\x1b[0m") === "bold red");
+assert("hex preserves text content", strip(hex("#ABC123")("test")) === "test");
